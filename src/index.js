@@ -1,28 +1,19 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import createLogger from 'redux-logger'
-import thunk from 'redux-thunk'
-import reducer from './reducers'
-import { getAllProducts } from './actions'
-import App from './containers/App'
+import './style/style.css'
+import Main from './components/Main'
+import Single from './components/Single'
+import PhotoGrid from './components/PhotoGrid'
 
-const middleware = [ thunk ];
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
+import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 
-const store = createStore(
-  reducer,
-  applyMiddleware(...middleware)
+const router = (
+    <Router history="browserHistory">
+        <Route path="/" component={Main}>
+            <IndexRoute component={PhotoGrid}></IndexRoute>
+            <Route path="/view/:postId" component={Single}></Route>
+        </Route>
+    </Router>
 )
 
-store.dispatch(getAllProducts())
-
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+render(router, document.getElementById('root'))

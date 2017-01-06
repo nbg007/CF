@@ -39,7 +39,6 @@ class Comments extends React.Component {
     render() {
         return (
             <div className="col-sm-4">
-                {/*{this.props.singleComments.map(this.renderComments)}*/}
                 {this.props.singleComments.map((item, index) => this.renderComments(item, index))}
                 <form onChange={e => this.handleChange(e)} onSubmit={e => this.handleSubmit(e)}>
                     <input type="text" className="form-control" name="user" placeholder="user"/>

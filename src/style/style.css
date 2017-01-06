@@ -1,4 +1,59 @@
+@import url(//fonts.googleapis.com/css?family=Roboto);
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: 'Roboto', 'Open Sans';
+}
+
 .btn-test {
     color: blue;
     background-color: red;
+}
+
+.individual-image {
+    width: 100%;
+    height: auto;
+}
+
+.image-wrapper {
+    height: 700px;
+}
+
+.instagram-text {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.image-text {
+    padding: 10px 15px;
+}
+
+.image-btn {
+    padding-bottom: 40px;
+}
+
+.comment-user {
+    color: blue;
+}
+
+.comment-text {
+    margin-left: 10px;
+}
+
+.remove-comment {
+    opacity: 0;
+}
+
+.comment:hover .remove-comment {
+    opacity: 1 !important;
+    cursor: pointer;
 }
